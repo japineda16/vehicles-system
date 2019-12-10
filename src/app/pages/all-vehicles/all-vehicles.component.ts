@@ -17,7 +17,7 @@ export class AllVehiclesComponent implements OnInit {
 
   openModal() {
     let dialogRef = this.dialog.open(VehicleFormUserComponent, {
-      height: '400px',
+      height: '80%',
       width: '80%',
     });
   }
