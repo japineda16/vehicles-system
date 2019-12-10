@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VehicleFormUserComponent } from 'src/app/ui/vehicle-form-user/vehicle-form-user.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-all-vehicles',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllVehiclesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+
+  openModal() {
+    let dialogRef = this.dialog.open(VehicleFormUserComponent, {
+      height: '400px',
+      width: '80%',
+    });
   }
 
 }

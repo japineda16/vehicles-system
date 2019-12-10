@@ -1,0 +1,120 @@
+<form class="example-form">
+    <mat-form-field class="example-mid-width">
+      <input matInput placeholder="Cliente" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="example-mid-width">
+        <input matInput placeholder="N° De telefono" type="text">
+    </mat-form-field>
+
+    <h2>Caractaristica del Vehiculo</h2>
+    <mat-form-field class="example-mid-width">
+        <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field class="example-mid-width">
+      <input matInput placeholder="Placa" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="example-mid-width">
+        <input matInput placeholder="Kilometraje" type="text">
+    </mat-form-field>
+  
+    <mat-form-field class="example-mid-width">
+        <input matInput placeholder="Marca" type="text">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-mid-width">
+        <input matInput placeholder="Modelo" type="text">
+    </mat-form-field>
+  
+    <mat-form-field class="example-mid-width">
+        <input matInput placeholder="Color" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Descripcion" type="textarea"></textarea>
+    </mat-form-field>
+
+    <div style="margin-top: 15px">
+        <h2>Inspeccion externa</h2>
+        <div style="float: left; width: 50%;">
+            <mat-checkbox style="margin-right: 100%;">Retrovisor Izquierdo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Retrovisor Derecho</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Retrovisor Interno</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Alfombras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Cepillos del Parabrisas</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Antena</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Estereo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Tapa de Gasolina</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Tapa Valvula de Aire</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Placa delantera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Placa Trasera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Capo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Compuerta trasera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Latoneria/Pintura</mat-checkbox>
+        </div>
+        <div style="float: right; width: 50%">
+            <mat-checkbox style="margin-right: 50% !important;">Parabrisas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Puertas de Abrir/Cerrar</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Manillas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Cocuyos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Luces delanteras</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Luces traseras</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Emblema</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Parachoques</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Tapa de los rines</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Cinturoes de seguridad</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Neumaticos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Techo</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Encendedor de CIG</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Alfombra</mat-checkbox>
+        </div>
+    </div>
+
+    <div style="margin-top: 15px">
+        <h2>Funcionamientos Básicos</h2>
+        <div style="float: left; width: 50%;">
+            <mat-checkbox style="margin-right: 100%;">Luces Neblina Delanteras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Luces traseras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Luces Altas</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Corneta</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Alarma</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Estereo</mat-checkbox>
+        </div>
+        <div style="float: right; width: 50%">
+            <mat-checkbox style="margin-right: 50% !important;">Vidrios Suben/Bajan</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Luces de Stock</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Luces Internas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Aire Acondicionado</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Frenos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Batería</mat-checkbox>
+        </div>
+    </div>
+
+    <div style="margin-top: 15px">
+        <h2>Funcionamientos Básicos</h2>
+        <div style="float: left; width: 50%;">
+            <mat-checkbox style="margin-right: 100%;">Extinguidor</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Cables para Corriente</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Gato</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Triangulo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;">Llave de Seguridad</mat-checkbox>
+        </div>
+        <div style="float: right; width: 50%">
+            <mat-checkbox style="margin-right: 50% !important;">Llave para ajustar Tuercas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Neumatico de repuesto</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Antena</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Tapa de Gasolina</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;">Taza de Ruedas</mat-checkbox>
+        </div>
+    </div>
+
+    <mat-button-toggle style="margin-top: 15px;">
+      Enviar
+    </mat-button-toggle>
+  </form>
+  
