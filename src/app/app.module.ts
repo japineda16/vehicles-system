@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//Angular Material Components
+import { HttpClientModule } from '@angular/common/http';
+// Angular Material Components
 import {MatNativeDateModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material';
@@ -43,6 +44,9 @@ import { AllVehiclesComponent } from './pages/all-vehicles/all-vehicles.componen
 import { AllVehiclesTableComponent } from './ui/all-vehicles-table/all-vehicles-table.component';
 import { TableForUsersComponent } from './pages/table-for-users/table-for-users.component';
 import { VehicleFormUserComponent } from './ui/vehicle-form-user/vehicle-form-user.component';
+import {FormsModule} from '@angular/forms';
+import { VehicleComponent } from './pages/vehicle/vehicle.component';
+import { UpdateVehicleComponent } from './pages/update-vehicle/update-vehicle.component';
 
 
 @NgModule({
@@ -53,12 +57,15 @@ import { VehicleFormUserComponent } from './ui/vehicle-form-user/vehicle-form-us
     AllVehiclesComponent,
     AllVehiclesTableComponent,
     TableForUsersComponent,
-    VehicleFormUserComponent
+    VehicleFormUserComponent,
+    VehicleComponent,
+    UpdateVehicleComponent,
   ],
   entryComponents: [
     VehicleFormUserComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
@@ -95,7 +102,8 @@ import { VehicleFormUserComponent } from './ui/vehicle-form-user/vehicle-form-us
     MatSortModule,
     MatPaginatorModule,
     CommonModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,42 @@
+::ng-deep .mat-form-field-placeholder{
+
+  color:#c2185b !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-placeholder{
+
+  color:#c2185b !important;
+}
+
+::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+
+  background-color:#c2185b !important;
+}
+
+::ng-deep .mat-form-field-underline{
+
+  background-color:#c2185b !important;
+}
+
+.mat-focused .placeholder {
+  color: #c2185b;
+}
+
+::ng-deep .mat-form-field-label{
+  color: #c2185b !important;
+}
+
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.justified {
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+  border-color: lightgrey !important;
+}

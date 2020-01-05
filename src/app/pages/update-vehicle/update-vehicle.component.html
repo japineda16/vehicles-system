@@ -1,0 +1,127 @@
+<div *ngIf="error">
+  <h2 style="text-align: center; margin-top: 120px">{{message}}</h2>
+</div>
+
+
+<div *ngIf="!error">
+  <form class="example-form">
+    <mat-grid-list cols="2" rowHeight="50px" style="margin-top: 15px">
+      <mat-grid-tile><h4 style="text-align: left; margin-left: 30px">Creado por {{user.name}}</h4></mat-grid-tile>
+      <mat-grid-tile><h4 style="text-align: right; margin-right: 30px">Reporte N° {{id}}</h4></mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="50px">
+      <mat-grid-tile><h1>Actualización del reporte</h1></mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="70px">
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Nombre del cliente" [(ngModel)]="vehicles.clientName" name="clientName" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="N° De telefono" [(ngModel)]="vehicles.clientPhoneNumber" name="clientPhoneNumber" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha" [(ngModel)]="date" name="date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Placa" [(ngModel)]="vehicles.licensePlate" name="licensePlate" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Kilometraje" [(ngModel)]="vehicles.mileage" name="mileage" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Marca" [(ngModel)]="vehicles.brand" name="brand" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Modelo" [(ngModel)]="vehicles.model" name="model" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="color-field">
+          <input matInput placeholder="Color" [(ngModel)]="vehicles.color" name="color" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="justified">
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Observaciones" style="width: 200px" [(ngModel)]="vehicles.observations" name="observations" type="textarea"></textarea>
+      </mat-form-field>
+    </div>
+
+    <mat-grid-list cols="1" rowHeight="50px">
+      <mat-grid-tile><h1>Estado del vehiculo</h1></mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile><h2>Retrovisor izquierdo</h2><mat-checkbox name="retrovisor_izquierdo" [(ngModel)]="vehicles.retrovisor_izquierdo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Retrovisor derecho</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.retrovisor_derecho" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Retrovisor interno</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.retrovisor_interno" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Alfombras</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.alfombras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Cepillos de parabrisas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.cepillos_de_parabrisas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Antena</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.antena" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Estereo</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.estereo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Tapa de gasolina</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.tapa_de_gasolina" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Tapa valvula de aire</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.tapa_valvula_de_aire" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Placa delantera</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.placa_delantera" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Placa trasea</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.placa_trasera" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Capo</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.capo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Compuerta trasera</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.compuerta_trasera" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Latoneria/Pintura</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.pintura" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Parabrisas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.parabrisas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Puertas abrir/cerrar</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.puertas_abrir_cerrar" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Manillas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.manillas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Cocuyos</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.cocuyos" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces delanteras</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_delanteras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces traseras</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_traseras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Emblema</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.emblema" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Parachoques</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.parachoques" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Tapa de los rines</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.tapas_de_rines" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Cinturones de seguridad</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.cinturones_de_seguridad" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Neumaticos</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.neumaticos" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Techo</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.techo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Encendedor de Cig</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.encendedor_de_cigarrillo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Alfombra</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.alfombras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces neblina delanteras</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_neblina_delanteras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces traseras</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_traseras" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>luces altas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_altas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Corneta</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.corneta" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Alarma</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.alarma" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Estereo</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.estereo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Vidrios subes/bajan</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.vidrios_suben_bajan" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces de stock</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_stock" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Luces internas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.luces_internas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Aire acondicionado</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.aire_acondicionado" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Frenos</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.frenos" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Bateria</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.bateria" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Extintor</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.extinguidor" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Cables para corriente</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.cables_para_corriente" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Gato</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.gato" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Triangulo</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.triangulo" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Llave de seguridad</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.llave_de_seguridad" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Llave para ajustar tuercas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.llave_ajustar_tuercas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Neumatico de repuesto</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.neumatico_repuesto" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Antena</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.antena" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Tapa de gasolina</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.tapa_de_gasolina" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+      <mat-grid-tile><h2>Taza de ruedas</h2><mat-checkbox name="prueba" [(ngModel)]="vehicles.taza_de_ruedas" style="margin-left: 15px;"></mat-checkbox></mat-grid-tile>
+    </mat-grid-list>
+
+    <div style="text-align: center; margin-top: 25px; margin-bottom: 20px">
+      <h4 style="padding: 15px;">{{message}}</h4>
+      <button mat-flat-button color="primary" style="margin-left: 10px" (click)="submit()">Actualizar</button>
+    </div>
+  </form>
+</div>

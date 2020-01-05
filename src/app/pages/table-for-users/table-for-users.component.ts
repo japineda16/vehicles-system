@@ -3,36 +3,19 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { VehicleFormUserComponent } from 'src/app/ui/vehicle-form-user/vehicle-form-user.component';
 import { MatDialog } from '@angular/material/dialog';
+import {VehiclesService} from '../../services/vehicles/vehicles.service';
+import {DataService} from '../../services/general/data.service';
+import {AuthService} from '../../services/auth/auth.service';
+import {Router} from '@angular/router';
 
 export interface PeriodicElement {
   id: number;
-  plate: string;
+  licensePlate: string;
   model: string;
   action: any;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 2, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 3, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 4, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 5, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 6, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 7, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 8, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 9, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 10, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 11, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 12, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 13, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 14, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 15, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 16, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 17, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 18, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 19, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 20, plate: 'A4X21', model: 'Ford', action: null},
-];
+
 
 @Component({
   selector: 'app-table-for-users',
@@ -41,19 +24,45 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableForUsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'plate', 'model', 'action'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['id', 'licensePlate', 'model', 'action'];
+  dataSource = this.data.getData('vehicles');
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog) {}
+  // Declarations
+  error: boolean;
+  message: string;
+
+  constructor(
+    public dialog: MatDialog,
+    private vehicles: VehiclesService,
+    private data: DataService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    if (!this.data.getData('user')) {
+      this.router.navigateByUrl('/');
+    } else {
+      this.dataSource.paginator = this.paginator;
+      this.error = false;
+    }
+  }
+
+  refreshTable() {
+    this.vehicles.getVehiclesWithUser(this.data.getData('user').id).subscribe(res => {
+      this.data.setData('vehicles', res[0].data[0].vehicles);
+      this.dataSource = res[0].data[0].vehicles;
+      this.error = false;
+    }, error => {
+      console.log(error);
+      this.error = true;
+      this.message = 'Ha sucedido un error, por favor, verifique su conexión a internet';
+    });
   }
 
   openModal() {
-    let dialogRef = this.dialog.open(VehicleFormUserComponent, {
+    const dialogRef = this.dialog.open(VehicleFormUserComponent, {
       height: '80%',
       width: '80%',
     });

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleFormUserComponent } from 'src/app/ui/vehicle-form-user/vehicle-form-user.component';
 import { MatDialog } from '@angular/material/dialog';
+import {DataService} from '../../services/general/data.service';
+import {Router} from '@angular/router';
+import {VehiclesService} from '../../services/vehicles/vehicles.service';
 
 @Component({
   selector: 'app-all-vehicles',
@@ -9,17 +12,16 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AllVehiclesComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+            private data: DataService,
+            private router: Router,
+            // tslint:disable-next-line:variable-name
+            private _vehicle: VehiclesService
+            ) { }
 
   ngOnInit() {
+    if (!this.data.getData('user')) {
+      this.router.navigateByUrl('/');
+    }
   }
-
-
-  openModal() {
-    let dialogRef = this.dialog.open(VehicleFormUserComponent, {
-      height: '80%',
-      width: '80%',
-    });
-  }
-
 }

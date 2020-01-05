@@ -1,120 +1,121 @@
 <form class="example-form">
     <mat-form-field class="example-mid-width">
-      <input matInput placeholder="Cliente" type="text">
+      <input required matInput placeholder="Cliente" [(ngModel)]="vehicle.clientName" name="clientName" type="text">
     </mat-form-field>
 
     <mat-form-field class="example-mid-width">
-        <input matInput placeholder="N° De telefono" type="text">
+        <input required matInput placeholder="N° De telefono" [(ngModel)]="vehicle.clientPhoneNumber" name="clientPhoneNumber" type="text">
     </mat-form-field>
 
     <h2>Caractaristica del Vehiculo</h2>
     <mat-form-field class="example-mid-width">
-        <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha">
+        <input required matInput [matDatepicker]="picker" placeholder="Seleccione una fecha" [(ngModel)]="vehicle.year" name="year">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-  
+
     <mat-form-field class="example-mid-width">
-      <input matInput placeholder="Placa" type="text">
+      <input required matInput placeholder="Placa" [(ngModel)]="vehicle.licensePlate" name="licensePlate" type="text">
     </mat-form-field>
 
     <mat-form-field class="example-mid-width">
-        <input matInput placeholder="Kilometraje" type="text">
+        <input required matInput placeholder="Kilometraje" [(ngModel)]="vehicle.mileage" name="mileage" type="text">
     </mat-form-field>
-  
+
     <mat-form-field class="example-mid-width">
-        <input matInput placeholder="Marca" type="text">
+        <input required matInput placeholder="Marca" [(ngModel)]="vehicle.brand" name="brand" type="text">
     </mat-form-field>
 
 
     <mat-form-field class="example-mid-width">
-        <input matInput placeholder="Modelo" type="text">
+        <input required matInput placeholder="Modelo" [(ngModel)]="vehicle.model" name="model" type="text">
     </mat-form-field>
-  
+
     <mat-form-field class="example-mid-width">
-        <input matInput placeholder="Color" type="text">
+        <input required matInput placeholder="Color" [(ngModel)]="vehicle.color" name="color" type="text">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Descripcion" type="textarea"></textarea>
+            <textarea required matInput placeholder="Observaciones" [(ngModel)]="vehicle.observations" name="observations" type="textarea"></textarea>
     </mat-form-field>
 
     <div style="margin-top: 15px">
         <h2>Inspeccion externa</h2>
         <div style="float: left; width: 50%;">
-            <mat-checkbox style="margin-right: 100%;">Retrovisor Izquierdo</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Retrovisor Derecho</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Retrovisor Interno</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Alfombras</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Cepillos del Parabrisas</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Antena</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Estereo</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Tapa de Gasolina</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Tapa Valvula de Aire</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Placa delantera</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Placa Trasera</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Capo</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Compuerta trasera</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Latoneria/Pintura</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.retrovisor_izquierdo" name="retrovisor_izquierdo">Retrovisor Izquierdo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.retrovisor_derecho" name="retrovisor_derecho">Retrovisor Derecho</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.retrovisor_interno" name="retrovisor_interno">Retrovisor Interno</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.alfombras" name="alfombras">Alfombras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.cepillos_de_parabrisas" name="cepillos_de_parabrisas">Cepillos del Parabrisas</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.antena" name="antena">Antena</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.estereo" name="estereo">Estereo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.tapa_de_gasolina" name="tapa_de_gasolina">Tapa de Gasolina</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.tapa_valvula_de_aire" name="tapa_valvula_de_aire">Tapa Valvula de Aire</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.placa_delantera" name="placa_delantera">Placa delantera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;"[(ngModel)]="vehicle.placa_trasera" name="placa_trasera">Placa Trasera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.capo" name="capo">Capo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;"[(ngModel)]="vehicle.compuerta_trasera" name="compuerta_trasera">Compuerta trasera</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.pintura" name="pintura">Latoneria/Pintura</mat-checkbox>
         </div>
         <div style="float: right; width: 50%">
-            <mat-checkbox style="margin-right: 50% !important;">Parabrisas</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Puertas de Abrir/Cerrar</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Manillas</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Cocuyos</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Luces delanteras</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Luces traseras</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Emblema</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Parachoques</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Tapa de los rines</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Cinturoes de seguridad</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Neumaticos</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Techo</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Encendedor de CIG</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Alfombra</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.parabrisas" name="parabrisas">Parabrisas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.puertas_abrir_cerrar" name="puertas_abrir_cerrar">Puertas de Abrir/Cerrar</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.manillas"  name="manillas">Manillas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.cocuyos" name="cocuyos">Cocuyos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.luces_delanteras" name="luces_delanteras">Luces delanteras</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.luces_traseras" name="luces_traseras">Luces traseras</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.emblema" name="emblema">Emblema</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.parachoques" name="parachoques">Parachoques</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.tapas_de_rines" name="tapas_de_rines">Tapa de los rines</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.cinturones_de_seguridad" name="cinturones_de_seguridad">Cinturoes de seguridad</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.neumaticos" name="neumaticos">Neumaticos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.techo" name="techo">Techo</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.encendedor_de_cigarrillo" name="encendedor_de_cigarrillo">Encendedor de CIG</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.alfombras" name="alfombras">Alfombra</mat-checkbox>
         </div>
     </div>
 
     <div style="margin-top: 15px">
         <h2>Funcionamientos Básicos</h2>
         <div style="float: left; width: 50%;">
-            <mat-checkbox style="margin-right: 100%;">Luces Neblina Delanteras</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Luces traseras</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Luces Altas</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Corneta</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Alarma</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Estereo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.luces_neblina_delanteras" name="luces_neblina_delanteras">Luces Neblina Delanteras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.luces_traseras" name="luces_traseras">Luces traseras</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.luces_altas" name="luces_altas">Luces Altas</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.corneta" name="corneta">Corneta</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.alarma" name="alarma">Alarma</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.estereo" name="estereo">Estereo</mat-checkbox>
         </div>
         <div style="float: right; width: 50%">
-            <mat-checkbox style="margin-right: 50% !important;">Vidrios Suben/Bajan</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Luces de Stock</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Luces Internas</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Aire Acondicionado</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Frenos</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Batería</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.vidrios_suben_bajan" name="vidrios_suben_bajan">Vidrios Suben/Bajan</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.luces_stock" name="luces_stock">Luces de Stock</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.luces_internas" name="luces_internas">Luces Internas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.aire_acondicionado" name="aire_acondicionado">Aire Acondicionado</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.frenos" name="frenos">Frenos</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.bateria" name="bateria">Batería</mat-checkbox>
         </div>
     </div>
 
     <div style="margin-top: 15px">
         <h2>Funcionamientos Básicos</h2>
         <div style="float: left; width: 50%;">
-            <mat-checkbox style="margin-right: 100%;">Extinguidor</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Cables para Corriente</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Gato</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Triangulo</mat-checkbox>
-            <mat-checkbox style="margin-right: 100%;">Llave de Seguridad</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.extinguidor" name="extinguidor">Extinguidor</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.cables_para_corriente" name="cables_para_corriente">Cables para Corriente</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.gato" name="gato">Gato</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.triangulo" name="triangulo">Triangulo</mat-checkbox>
+            <mat-checkbox style="margin-right: 100%;" [(ngModel)]="vehicle.llave_de_seguridad" name="llave_de_seguridad">Llave de Seguridad</mat-checkbox>
         </div>
         <div style="float: right; width: 50%">
-            <mat-checkbox style="margin-right: 50% !important;">Llave para ajustar Tuercas</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Neumatico de repuesto</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Antena</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Tapa de Gasolina</mat-checkbox>
-            <mat-checkbox style="margin-right: 50% !important;">Taza de Ruedas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.llave_ajustar_tuercas" name="llave_ajustar_tuercas">Llave para ajustar Tuercas</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.neumatico_repuesto" name="neumatico_repuesto">Neumatico de repuesto</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.antena" name="antena">Antena</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.tapa_de_gasolina" name="tapa_de_gasolina">Tapa de Gasolina</mat-checkbox>
+            <mat-checkbox style="margin-right: 50% !important;" [(ngModel)]="vehicle.taza_de_ruedas" name="taza_de_ruedas">Taza de Ruedas</mat-checkbox>
         </div>
     </div>
 
-    <mat-button-toggle style="margin-top: 15px;">
+    <mat-button-toggle style="margin-top: 15px;" (click)="submit()">
       Enviar
     </mat-button-toggle>
+    <h3 *ngIf="success && !error" style="color: green">{{ message }}</h3>
+    <h3 *ngIf="error && !success" style="color: red">{{ message }}</h3>
   </form>
-  

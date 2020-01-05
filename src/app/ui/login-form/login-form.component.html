@@ -1,13 +1,18 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Usuario" value="Usuario">
+    <input matInput placeholder="Usuario" type="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" #username="ngModel" required>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Contraseña" value="Contraseña" type="password">
+    <input matInput placeholder="Contraseña" type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" #password="ngModel" required>
   </mat-form-field>
 
-  <mat-button-toggle>
+  <button type="submit" mat-raised-button (click)="submit()">
     Enviar
-  </mat-button-toggle>
+  </button>
+
+  <div style="text-align: center;">
+    <h3 *ngIf="error == true" style="color: darkred">¡No se ha podido procesar la petición!</h3>
+  </div>
+
 </form>

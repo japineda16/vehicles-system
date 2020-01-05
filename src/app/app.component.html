@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-stroked-button routerLink="" routerLinkActive="mat-accent">Iniciar Sesión</button>
-    <button mat-stroked-button routerLink="/all-vehicles" routerLinkActive="mat-accent" style="margin-left: 10px">Ver todos los vehiculos</button>
-    <button mat-stroked-button routerLink="/vehicles/" routerLinkActive="mat-accent" style="margin-left: 10px">Ver vehiculos por sucursal</button>
+    <button mat-stroked-button routerLink="" routerLinkActive="mat-accent" *ngIf="!session">Iniciar Sesión</button>
+    <button mat-stroked-button routerLink="/all-vehicles" routerLinkActive="mat-accent" style="margin-left: 10px" *ngIf="session && type === 1">Ver todos los vehiculos</button>
+    <button mat-stroked-button routerLink="/vehicles/" routerLinkActive="mat-accent" style="margin-left: 10px" *ngIf="session && type === 2">Ver vehiculos por sucursal</button>
+    <button mat-stroked-button (click)="close()" routerLinkActive="mat-accent" *ngIf="session">Cerrar Sesión</button>
   </mat-toolbar-row>
 </mat-toolbar>
 

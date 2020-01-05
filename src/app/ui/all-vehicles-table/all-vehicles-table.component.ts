@@ -1,26 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-
-export interface PeriodicElement {
-  id: number;
-  plate: string;
-  model: string;
-  action: any;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 2, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 3, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 4, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 5, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 6, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 7, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 8, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 9, plate: 'A4X21', model: 'Ford', action: null},
-  {id: 10, plate: 'A4X21', model: 'Ford', action: null},
-];
+import {VehiclesService} from '../../services/vehicles/vehicles.service';
+import {DataService} from '../../services/general/data.service';
+import {VehicleFormUserComponent} from '../vehicle-form-user/vehicle-form-user.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-all-vehicles-table',
@@ -29,12 +13,42 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AllVehiclesTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'plate', 'model', 'action'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['id', 'licensePlate', 'model', 'action'];
+  dataSource = this.data.getData('vehicles');
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
+  error: boolean;
+  message: string;
+
+  constructor(
+    // tslint:disable-next-line:variable-name
+    private _vehicle: VehiclesService,
+    private data: DataService,
+    public dialog: MatDialog
+  ) { }
+
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    console.log(this.data.getData('vehicles'));
+  }
+
+  refreshTable() {
+    this._vehicle.getAll().subscribe(res => {
+      this.data.setData('vehicles', res[0].data);
+      this.dataSource = res[0].data;
+      this.error = false;
+    }, error => {
+      console.log(error);
+      this.error = true;
+      this.message = 'Ha sucedido un error, por favor, verifique su conexión a internet';
+    });
+  }
+
+  openModal() {
+    const dialogRef = this.dialog.open(VehicleFormUserComponent, {
+      height: '80%',
+      width: '80%',
+    });
   }
 }
