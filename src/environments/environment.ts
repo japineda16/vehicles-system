@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  direction: 'http://45.84.196.21:8000/'
+  direction: 'http://64.225.117.15:8000/'
 };
 
 /*
