@@ -47,6 +47,7 @@ import { VehicleFormUserComponent } from './ui/vehicle-form-user/vehicle-form-us
 import {FormsModule} from '@angular/forms';
 import { VehicleComponent } from './pages/vehicle/vehicle.component';
 import { UpdateVehicleComponent } from './pages/update-vehicle/update-vehicle.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { UpdateVehicleComponent } from './pages/update-vehicle/update-vehicle.co
     VehicleFormUserComponent,
     VehicleComponent,
     UpdateVehicleComponent,
+    AdminHomeComponent,
   ],
   entryComponents: [
     VehicleFormUserComponent

@@ -11,7 +11,7 @@ export class AuthService {
 
   public session = false;
   // @ts-ignore
-  public sessionEvent: EventEmitter = new EventEmitter();
+  public sessionEvent: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private http: HttpClient,

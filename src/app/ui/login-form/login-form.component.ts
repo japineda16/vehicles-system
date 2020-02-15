@@ -37,7 +37,7 @@ export class LoginFormComponent implements OnInit {
       this.data.setData('log', res.token_type + ' ' + res.access_token);
       if (res.user.type === 1) {
         this.data.setData('vehicles', res.vehicles.data);
-        this.route.navigateByUrl('all-vehicles');
+        this.route.navigateByUrl('admin-home');
       }
       if (res.user.type === 2) {
         this.data.setData('vehicles', res.vehicles.data[0].vehicles);

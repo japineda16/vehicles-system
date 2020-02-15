@@ -23,6 +23,7 @@ export class AppComponent implements OnInit, OnChanges {
       delete this.data.data;
       window.location.replace('/');
       this.ngOnInit();
+      this.auth.setSession(false);
     }, error => {
       console.log(error);
     });

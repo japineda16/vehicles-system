@@ -5,13 +5,15 @@ import {AllVehiclesComponent} from './pages/all-vehicles/all-vehicles.component'
 import { TableForUsersComponent } from './pages/table-for-users/table-for-users.component'
 import {VehicleComponent} from './pages/vehicle/vehicle.component';
 import {UpdateVehicleComponent} from './pages/update-vehicle/update-vehicle.component';
+import {AdminHomeComponent} from './pages/admin-home/admin-home.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'all-vehicles', component: AllVehiclesComponent},
   {path: 'vehicles', component: TableForUsersComponent},
   {path: 'vehicle/:id', component: VehicleComponent},
-  {path: 'update-vehicle/:id', component: UpdateVehicleComponent}
+  {path: 'update-vehicle/:id', component: UpdateVehicleComponent},
+  {path: 'admin-home', component: AdminHomeComponent},
 ];
 
 @NgModule({
